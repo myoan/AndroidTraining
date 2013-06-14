@@ -1,18 +1,20 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity" >
 
     <!-- このLinearLayoutをRelativeLayoutに変更して同じレイアウトを実現してください -->
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="#ffc356"
         android:orientation="horizontal"
         android:padding="4dp" >
 
         <ImageView
+            android:id="@+id/Image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="4dp"
@@ -20,9 +22,12 @@
             android:src="@drawable/ic_launcher" />
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/Image"
+            android:layout_alignTop="@+id/Image"
+            android:layout_alignBottom="@+id/Image"
+            android:background="#000000"
             android:orientation="vertical" >
 
             <TextView
@@ -37,6 +42,6 @@
                 android:layout_weight="1"
                 android:background="#ffedc6" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 </FrameLayout>

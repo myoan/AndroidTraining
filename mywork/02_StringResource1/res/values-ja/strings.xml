@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">02_StringResource1</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="str1">こんにちわ</string>
+    <string name="str2">ほげ</string>
+    <string name="str3">ぴよ</string>
+    <string name="str4">はろーわーるど</string>
+    <string name="str5">ウーロン茶</string>
+    <string name="str6">今日は%1$s曜日です!</string>
+
+</resources>

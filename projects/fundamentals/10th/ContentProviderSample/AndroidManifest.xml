@@ -27,6 +27,10 @@
             android:name="jp.mixi.sample.contentprovider.BookContentProvider"
             android:authorities="jp.mixi.sample.contentprovider.Book"
             android:exported="true" />
+        <provider
+            android:name="jp.mixi.sample.contentprovider.MyContentProvider"
+            android:authorities="jp.mixi.sample.mycontentprovider.Book"
+            android:exported="true" />
     </application>
 
 </manifest>

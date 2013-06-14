@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
+
     <!-- TODO: 左側から順に、下記の View を配置していき、そのまとまりを画面上部に揃える -->
     <!-- 1. プロフィール画像(ic_launcher)と、それを囲う四角形の枠、その下に プロフィール と書かれた文字 -->
     <!-- 2. 1. の右側の上半分に、ニックネームの表示と、そのさらに右端に設定アイコン -->
@@ -28,6 +29,259 @@
     <!-- Hint: 3. バッチ用の背景は android:background="@drawable/badge" にします -->
     <!-- Hint: 4. TextView には、文字の隣に drawable を表示する属性があります -->
 
+
     <!-- TODO: 上記の View の上に、お知らせを表示する View を配置する -->
     <!-- Hint: 1. お知らせを表示する View の背景は android:background="@drawable/notify_button_state_list" にします -->
+
+    <LinearLayout
+        android:id="@+id/Profile"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:baselineAligned="false" >
+
+        <RelativeLayout
+            android:id="@+id/Image"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <FrameLayout
+                android:id="@+id/ImageFrame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="#888888" >
+            <ImageView
+                android:id="@+id/Image1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="#ffffff"
+                android:src="@drawable/ic_launcher" android:contentDescription="@string/ProfileImage"/>
+            </FrameLayout>
+
+        	<TextView
+        	    android:id="@+id/Title"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_below="@+id/ImageFrame"
+        	    android:layout_centerHorizontal="true"
+        	    android:layout_marginTop="5dp"
+        	    android:text="@string/ProfileString" />
+    	</RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Action"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_margin="10dp" >
+
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#ffffff"
+                android:src="@android:drawable/ic_menu_manage" android:contentDescription="@string/ManagementImage"/>
+
+        	<RelativeLayout
+        	    android:id="@+id/Bar"
+        	    android:layout_width="match_parent"
+        	    android:layout_height="2dp"
+        	    android:layout_alignBottom="@+id/imageButton1"
+        	    android:layout_alignParentLeft="true"
+        	    android:background="#888888"
+        	    android:paddingLeft="10dp"
+        	    android:paddingRight="10dp" >
+        	</RelativeLayout>
+
+    		<LinearLayout
+        		android:id="@+id/Buttons"
+        		android:layout_width="match_parent"
+        		android:layout_height="wrap_content"
+        		android:layout_below="@+id/Bar"
+        		android:orientation="horizontal" >
+
+        	<ImageButton
+        	    android:id="@+id/imageButtonCall"
+        	    android:layout_width="0dp"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="1"
+        	    android:layout_marginTop="3dp"
+        	    android:src="@android:drawable/ic_menu_call" android:contentDescription="@string/CallImage"/>
+
+        	<ImageButton
+        	    android:id="@+id/imageButtonSend"
+        	    android:layout_width="0dp"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="1"
+        	    android:layout_marginTop="3dp"
+        	    android:src="@android:drawable/ic_menu_send" android:contentDescription="@string/SendImage"/>
+
+        	<ImageButton
+        	    android:id="@+id/imageButtonShare"
+        	    android:layout_width="0dp"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="1"
+        	    android:layout_marginTop="3dp"
+        	    android:src="@android:drawable/ic_menu_share" android:contentDescription="@string/ShareImage"/>
+			</LinearLayout>
+
+    		<TextView
+    		    android:id="@+id/UserName"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:layout_above="@+id/Bar"
+    		    android:layout_alignParentLeft="true"
+    		    android:text="@string/UserNameString" />
+        	
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/Bar2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Profile"
+        android:background="#888888"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/BaseFooterView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="#888888"
+        android:layout_alignParentBottom="true" >
+
+    	<RelativeLayout
+        	android:id="@+id/FooterView"
+        	android:layout_width="match_parent"
+        	android:layout_height="80dp" >
+        
+        	<RelativeLayout 
+            	android:id="@+id/Menu"
+            	android:layout_width="80dp"
+            	android:layout_height="match_parent"
+            	android:layout_alignParentLeft="true"
+        		android:layout_marginTop="1dp"
+        		android:layout_marginRight="1dp"
+        		android:background="#ffffff" >
+
+        	    <FrameLayout
+        	        android:id="@+id/MenuFrame"
+    		    	android:layout_width="wrap_content"
+    		    	android:layout_height="wrap_content"
+    		    	android:layout_centerHorizontal="true" >
+
+    				<ImageButton
+    				    android:id="@+id/MenuImage"
+    				    android:layout_width="wrap_content"
+    				    android:layout_height="wrap_content"
+    				    android:layout_marginTop="10dp"
+    				    android:background="#ffffff"
+    				    android:contentDescription="@string/MenuImage"
+    				    android:src="@drawable/ic_launcher" />
+
+    				<TextView
+    				    android:id="@+id/MenuBadge"
+    				    android:layout_width="wrap_content"
+    				    android:layout_height="wrap_content"
+    				    android:background="@drawable/badge"
+    				    android:layout_marginLeft="30dp"
+    				    android:layout_marginTop="5dp"
+    				    android:text="@string/NotificationNumString" />
+				</FrameLayout>
+
+    			<TextView
+    		    	android:id="@+id/MenuTitle"
+    		    	android:layout_width="wrap_content"
+    		    	android:layout_height="wrap_content"
+    		    	android:layout_below="@+id/MenuFrame"
+    		    	android:text="@string/MenuString"
+    		    	android:layout_centerHorizontal="true" />
+        	</RelativeLayout>
+        
+        	<RelativeLayout 
+            	android:id="@+id/Tweet"
+            	android:layout_width="wrap_content"
+            	android:layout_height="match_parent"
+            	android:layout_toRightOf="@+id/Menu"
+            	android:layout_toLeftOf="@+id/RecentNews"
+        		android:layout_marginTop="1dp"
+        		android:layout_marginRight="1dp"
+        		android:background="#ffffff" >
+
+    			<TextView
+    		    	android:id="@+id/TweetText"
+    		    	android:layout_width="wrap_content"
+    		    	android:layout_height="wrap_content"
+    		    	android:layout_centerVertical="true"
+    		    	android:layout_toRightOf="@+id/TweetImage"
+    		    	android:background="@drawable/button_state_list"
+    		    	android:text="@string/TweetString" />
+
+    			<ImageButton
+    			    android:id="@+id/TweetImage"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentLeft="true"
+    			    android:layout_centerVertical="true"
+    			    android:background="#ffffff"
+    			    android:contentDescription="@string/TweetImage"
+    			    android:src="@drawable/ic_launcher" />
+
+			</RelativeLayout>
+
+    		<RelativeLayout
+    		    android:id="@+id/RecentNews"
+    		    android:layout_width="80dp"
+    		    android:layout_height="match_parent"
+    		    android:layout_alignParentRight="true"
+    		    android:layout_alignParentTop="true"
+        		android:layout_marginTop="1dp"
+        		android:background="#ffffff" >
+
+    		    <ImageButton
+    		        android:id="@+id/RecentNewsImage"
+    		        android:layout_width="wrap_content"
+    		        android:layout_height="wrap_content"
+    		        android:layout_centerHorizontal="true"
+    		        android:layout_marginTop="10dp"
+    		        android:background="#ffffff"
+    		        android:src="@drawable/ic_launcher" android:contentDescription="@string/RecentImage"/>
+
+    			<TextView
+    			    android:id="@+id/RecentNewsText"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_below="@+id/RecentNewsImage"
+    			    android:background="@drawable/button_state_list"
+    			    android:text="@string/RecentNewsString"
+    			    android:layout_centerHorizontal="true" />
+    		</RelativeLayout>
+    	</RelativeLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/Notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/BaseFooterView"
+        android:layout_alignParentLeft="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/notify_button_state_list"
+        android:textColor="#ffffff"
+        android:text="@string/NotificationString" />
+
 </RelativeLayout>

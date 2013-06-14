@@ -4,6 +4,7 @@ package jp.mixi.practice.intent.med;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.content.Intent;
 
 public class MainActivity extends Activity {
     public static final String ACTION_FIRST = "jp.mixi.practice.intent.med.android.intent.action.FIRST";
@@ -24,21 +25,30 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO ここに、ACTION_FIRST を呼び出す処理を書く
-                
+                String ACTION_FIRST = "jp.mixi.sample.android.intent.action.FIRST";
+                Intent intent = new Intent();
+                intent.setAction(ACTION_FIRST);
+                sendBroadcast(intent);
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO ここに、ACTION_SECOND を呼び出す処理を書く
-                
+                String ACTION_SECOND = "jp.mixi.sample.android.intent.action.SECOND";
+                Intent intent = new Intent();
+                intent.setAction(ACTION_SECOND);
+                sendBroadcast(intent);
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO ここに、ACTION_THIRD を呼び出す処理を書く
-                
+                String ACTION_THIRD = "jp.mixi.sample.android.intent.action.THIRD";
+                Intent intent = new Intent();
+                intent.setAction(ACTION_THIRD);
+                sendBroadcast(intent);
             }
         });
     }

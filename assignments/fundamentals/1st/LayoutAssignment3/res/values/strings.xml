@@ -4,5 +4,22 @@
     <string name="app_name">LayoutAssignment3</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="UserNameString">Motoki Yoan</string>
+    <string name="RecentNewsString">最近</string>
+    <string name="TweetString">つぶやきを投稿</string>
+    <string name="MenuString">メニュー</string>
+    <string name="NotificationNumString">30</string>
+    <string name="ProfileString">プロフィール</string>
+    <string name="NotificationString">30件のお知らせがあります！</string>
+    
+    
+    <string name="RecentImage">イメージ</string>
+    <string name="TweetImage">イメージ</string>
+    <string name="MenuImage">イメージ</string>
+    <string name="ShareImage">イメージ</string>
+    <string name="CallImage">イメージ</string>
+    <string name="SendImage">イメージ</string>
+    <string name="ManagementImage">イメージ</string>
+    <string name="ProfileImage">イメージ</string>
 
 </resources>

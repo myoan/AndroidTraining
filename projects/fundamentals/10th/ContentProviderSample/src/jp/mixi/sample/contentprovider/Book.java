@@ -10,7 +10,8 @@ public class Book implements BaseColumns {
     private static final String TAG = Book.class.getSimpleName();
 
     // 一意となる識別子にする
-    public static final String AUTHORITY = "jp.mixi.sample.contentprovider.Book";
+    //public static final String AUTHORITY = "jp.mixi.sample.contentprovider.Book";
+    public static final String AUTHORITY = "jp.mixi.sample.mycontentprovider.Book";
 
     // bookテーブル用のConentURI
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/book");

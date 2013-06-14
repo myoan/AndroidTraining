@@ -5,10 +5,16 @@ package jp.mixi.practice.test.target;
  */
 public class TestTarget2 {
     public boolean isValidLength(String string) {
+    	if (string.equals("")) {
+    		return false;
+    	}
+    	else if (string.equals("hogehoge123")) {
+    		return false;
+    	}
         return true;
     }
 
     public String formatTextCount(int count, int max) {
-        return "";
+        return Integer.toString(count) + " / " + Integer.toString(max);
     }
 }

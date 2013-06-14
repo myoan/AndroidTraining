@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
         Uri uri = Uri.parse("content://" + "jp.mixi.sample.contentprovider.Book" + "/book");
         Cursor cursor = getContentResolver().query(uri, null, null, null, null);
         while (cursor.moveToNext()) {
-            Log.d(TAG, "call:" + cursor.getString(cursor.getColumnIndexOrThrow("title")));
+            Log.d(TAG, "call->:" + cursor.getString(cursor.getColumnIndexOrThrow("title")));
         }
         // 処理が完了したらCursorを閉じます
         cursor.close();

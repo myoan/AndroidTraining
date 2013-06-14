@@ -2,8 +2,10 @@
 package jp.mixi.assignment.intent.beg;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.content.Intent;
 
 public class MainActivity extends Activity {
     @Override
@@ -16,6 +18,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO http://mixi.jp をブラウザで開くための Intent を作って、ブラウザを立ち上げる
+            	Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://mixi.jp"));
+            	startActivity(intent);
             }
         });
     }

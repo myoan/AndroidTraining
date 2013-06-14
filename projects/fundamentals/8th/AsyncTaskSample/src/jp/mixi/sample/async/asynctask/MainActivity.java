@@ -66,6 +66,7 @@ public class MainActivity extends Activity {
                 publishProgress();
                 Thread.sleep(2000L);
                 publishProgress();
+                //Toast.makeText(MainActivity.this, "hogehoge", Toast.LENGTH_SHORT).show();
                 Thread.sleep(2000L);
                 publishProgress();
                 Thread.sleep(2000L);

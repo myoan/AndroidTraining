@@ -2,6 +2,7 @@
 package jp.mixi.sample.customlistitem;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
 
     private MainActivity mActivity;
+    private int position;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +31,9 @@ public class MainActivity extends Activity {
             list.add("hoge" + i);
         }
 
-        ListView listView = (ListView) findViewById(R.id.ListView);
+        listView = (ListView) findViewById(R.id.ListView);
         CustomListItemAdapter adapter = new CustomListItemAdapter(mActivity, list);
+        position = listView.getFirstVisiblePosition();
 
         listView.setAdapter(adapter);
         // リストアイテムをタップした時の動作を定義する
@@ -39,6 +43,15 @@ public class MainActivity extends Activity {
                 // Adapterからタップした位置のデータを取得する
                 String str = (String) parent.getItemAtPosition(position);
                 Toast.makeText(mActivity, str, Toast.LENGTH_SHORT).show();
+            }
+        });
+        View button = findViewById(R.id.button1);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("hello, NewActivity1");
+                listView.smoothScrollToPosition(position);
             }
         });
     }
